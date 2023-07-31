@@ -79,18 +79,18 @@ def Linux_As_Assistent():
 	while True:
 
 		os.system("tput setaf 3")
-		print("\n1.Press 1 : Run Commands and print output ")
-		print("2.Press 2 :   Apply Partition of your choice ")
-		print("3.Press 3 :  LVM Support ")
-		print("4.Press 4 :  Mounted disk details")
-		print("5.Press 5 : List of VG's")
-		print("6.Press 6 : Yum Initial Setup ")
-		print("7.Press 7 : Go to main menu")
-		print("8.Press 8 : Quit")
+		print("\n1.Enter  1 To : Run Commands and print output ")
+		print("2. Enter 2 To : Apply Partition of your choice ")
+		print("3. Enter 3 :  LVM Support ")
+		print("4. Enter 4 :  Mounted disk details")
+		print("5. Enter 5 : List of VG's")
+		print("6. Enter 6 : Yum Initial Setup ")
+		print("7. Enter 7 : Go to main menu")
+		print("8. Enter 8 : Quit")
 
 		os.system("tput setaf 5")
 		a=input("\nEnter your input :  ")
-
+#---------------If you selction 1 as choice : 
 		if a=="1":
 			while True:
 				os.system("tput setaf 6")
@@ -101,7 +101,7 @@ def Linux_As_Assistent():
 				#command=input("\nDo you want to run more command Y/N:- ")
 				if (command=="exit"): 
 					break
-	
+	#---------------If you select 2 as choice : 
 		elif a=="2":
 			os.system("tput setaf 7")
 			os.system("fdisk -l")
@@ -131,7 +131,7 @@ def Linux_As_Assistent():
 			os.system("tput setaf 2")
 			print("Mission Accomplished : Mounted ")
 			time.sleep(2)
-
+#---------------If you select 3 as choice : 
 		elif a=="3":
 			os.system("\n\nfdisk -l")
 			os.system("tput setaf 3")
@@ -180,30 +180,30 @@ def Linux_As_Assistent():
 			print("Successfully Mounted please check with df -h command ")
 			print("\n Back to the menu")
 			os.system("tput setaf 7")
-
+#---------------If you select 4 as choice :
 		elif a=="4":
 			os.system("df -h")
-
+#---------------If you select 5 as choice :
 		elif a=="5":
 			os.system("vgdisplay")
-
+#---------------If you select 6 as choice :
 		elif a=="6":
 			os.system("yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm")
-
+#---------------If you select 7 as choice :
 		elif a=="7":
 			break
-
+#---------------If you select 8 as choice :
 		elif a=="8":
 			os.system("tput setaf 7")
 			print("Better Luck next time ..")
 			time.sleep(2)
 			exit()
-
+#---------------If you select Invalid number as choice :
 		else:
 			input("Invalid detail enterd")
 			continue
 			
-			
+#-------------------Web Module setup to create an environment ready---------------# 			
 def Web_Environment_setup():
 
 	from os import system
@@ -228,7 +228,7 @@ def Web_Environment_setup():
 
 	    system("tput setaf 3")
 	    ch = int(input("\n Enter your selcted requirement code  : "))
-
+#---------------If you select 1 as choice :
 	    if ch==1 : 
 	        x = sp.getstatusoutput("rpm -q httpd")
 	        if x[0] != 0 :
@@ -238,7 +238,7 @@ def Web_Environment_setup():
 	            system("tput setaf 2")
 	            print("\n Nothing Required to do install ")
 	            sleep(2)
-
+#---------------If you select 2 as choice :
 	    elif ch==2 :
 	        system("tput setaf 3")
 	        Website_Page1 = input("\n Create your html document for browser : ")
@@ -246,36 +246,36 @@ def Web_Environment_setup():
 	        system("tput setaf 2")
 	        print("\n Created your first page ")
 	        sleep(2)
-
+#---------------If you select 3 as choice :
 	    elif ch==3 :
 	        system("tput setaf 2")
 	        system("systemctl start httpd")
 	        print("\n Strated your Environment ")
 	        sleep(2)
-
+#---------------If you select 4 as choice :
 	    elif ch==4 :
 	        system("tput setaf 2")
 	        system("systemctl stop httpd")
 	        print("\n Environment Stopped by user ")
 	        sleep(2)
-
+#---------------If you select 5 as choice :
 	    elif ch==5 :
 	        break
-
+#---------------If you select 6 as choice :
 	    elif ch==6 :
 	     	system("tput setaf 3")
 	     	print(" Exit ")
 	     	system("tput sgr0")
 	     	exit()
 	     	
-	        
+#---------------If you select incorrect  as choice :	        
 	    else :
 	        system("tput setaf 1")
-	        print("\nIncorrect Option selcted \n select appropriate ption count ")
+	        print("\n Incorrect Option selcted \n select appropriate option count ")
 	        sleep(2)
 
 
-
+#---------------Containerized App Module Setup  :
 
 def Containerization():
 
@@ -308,6 +308,7 @@ def Containerization():
 		os.system("tput setaf 5")
 		x=input("\n Type your selected code : ")
 		os.system("clear")
+#---------------If you select 1 as choice :
 		if x=="1":
 			os.system("tput sgr0")	
 			os.system("tput setaf 6")
@@ -319,7 +320,7 @@ def Containerization():
 			input("\n\t\t Enter Button ")
 			os.system("tput sgr0")
 
-
+#---------------If you select 2 as choice :
 		
 		elif x=="2":
 			os.system("tput sgr0")	
@@ -331,7 +332,7 @@ def Containerization():
 			os.system("tput setaf 4")
 			input("\n\t\t Enter Button")
 			os.system("tput sgr0")
-
+#---------------If you select 3 as choice :
 
 		elif x=="3":
 			os.system("tput sgr0")	
@@ -342,9 +343,7 @@ def Containerization():
 			input("\n\t\t Enter button ")
 			os.system("tput sgr0")
 
-
-			
-
+	#---------------If you select 4 as choice :		
 		elif x=="4":
 			os.system("tput sgr0")	
 			os.system("docker ps")
@@ -354,7 +353,7 @@ def Containerization():
 			input("\n\t\t Enter Button ")
 			os.system("tput sgr0")
 
-
+#---------------If you select 5 as choice :
 		elif x=="5":
 			os.system("tput sgr0")	
 			os.system("docker images")
@@ -367,7 +366,7 @@ def Containerization():
 			input("\n\t\t Enter ")
 			os.system("tput sgr0")
 
-
+#---------------If you select 6 as choice :
 
 		elif x=="6":
 			os.system("tput sgr0")	
@@ -379,7 +378,7 @@ def Containerization():
 			os.system("tput sgr0")
 
 		
-
+#---------------If you select 7 as choice :
 		elif x=="7":
 			os.system("tput sgr0")	
 			os.system("docker ps -a")
@@ -388,7 +387,7 @@ def Containerization():
     	os.system("docker start {}".format(Start_Container))
    #-----To Attach Container 
 			os.system("docker attach {}".format(Start_Container))
-
+#---------------If you select 8 as choice :
 		elif x=="8":
 			while True:
 				os.system("tput sgr0")	
@@ -436,7 +435,7 @@ def Containerization():
 				else:
 					print("\n\t\t Invalid Choice ")
 
-
+#---------------If you select 9 as choice :
 
 		elif x=="9":
 			os.system("tput sgr0")	
@@ -450,13 +449,15 @@ def Containerization():
 			input("\n\t\t Enter Button ")
 			os.system("tput sgr0")
 		
-
+#---------------If you select 10 as choice :
 		elif x=="10":
 			break
-
+#---------------If you select 11 as choice :
 		elif x=="11":
 			exit()
 
+
+#------------------------Reference and help taken to create a program------------------------#
 
 
 
